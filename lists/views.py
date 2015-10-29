@@ -5,5 +5,5 @@ from django.shortcuts import render
 
 def home_page(request):
 	return render(request, 'home.html')
-#	return HttpResponse('<html><title>To-Do</title><h1>Umroh Machfudza Sihaloho\'s To-Do List</h1></html>')	
+#	return HttpResponse('<html><title>To-Do list<title><h1>Umroh Machfudza Sihaloho\'s To-Do List</h1></html>')	
 
