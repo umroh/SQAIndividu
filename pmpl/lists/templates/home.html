@@ -15,6 +15,19 @@
 			{% for item in items %}
 				<tr><td>{{ forloop.counter }}: {{ item.text }}</tr></td>
 			{% endfor %}
-		</table>		
+		</table>
+
+		<br>
+		<h3>
+			{% ifequal items.count 0 %}
+				{{ value|default:"I can get my holiday, now!" }}
+			{% else %}
+				{% if items.count < 5 %}
+					{{ value|default:"There are some to-do list, I can do it faster!" }}
+				{% else %}
+					{{ value|default:"Forget about holiday! I have much work to-do!"}}
+				{% endif %}
+			{% endifequal %}
+		</h3>
 	</body>
 </html>
