@@ -13,6 +13,5 @@ def home_page(request):
 	
 	items = Item.objects.all()
 	
-	value = ''
-	return render(request, 'home.html', {'items' : items}, value)
+	return render(request, 'home.html', {'items' : items})
 

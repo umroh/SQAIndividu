@@ -91,7 +91,7 @@ class HomePageTest(TestCase):
 		self.assertIn('itemey 1', response.content.decode())
 		self.assertIn('itemey 2', response.content.decode())
 		self.assertIn('There are some to-do list, I can do it faster!', response.content.decode())
-	
+		
 class ItemModelTest(TestCase):
 
 	def test_can_saving_and_retrieving_items(self):
