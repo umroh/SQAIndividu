@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>To-Do lists</title>
+	</head>	
+	<body>
+		<h1>Umroh Machfudza Sihaloho's To-Do List</h1>
+		<h2>Your To-Do list</h1>
+		
+		<form method="POST">
+			<input name="item_text" id = "id_new_item" placeholder = "Enter a to-do item"/>
+			{% csrf_token%}
+		</form>
+		
+		<table id = "id_list_table">
+			{% for item in items %}
+				<tr><td>{{ forloop.counter }}: {{ item.text }}</tr></td>
+			{% endfor %}
+		</table>
+
+		<br>
+		<h3>
+			{% ifequal items.count 0 %}
+				{{ value|default:"I can get my holiday, now!" }}
+			{% else %}
+				{% if items.count < 5 %}
+					{{ value|default:"There are some to-do list, I can do it faster!" }}
+				{% else %}
+					{{ value|default:"Forget about holiday! I have much work to-do!"}}
+				{% endif %}
+			{% endifequal %}
+		</h3>
+	</body>
+</html>
