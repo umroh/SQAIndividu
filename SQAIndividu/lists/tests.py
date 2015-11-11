@@ -6,6 +6,7 @@ from django.template.loader import render_to_string
 
 from lists.views import home_page
 
+#this is our unit test
 
 class HomePageTest(TestCase):	
 
